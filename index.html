@@ -1,1 +1,551 @@
-<!DOCTYPE html> <html lang="es"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Dulce Imperio - Repostería Artesanal</title> <style> * { margin: 0; padding: 0; box-sizing: border-box; } body { font-family: 'Georgia', serif; color: #333; line-height: 1.6; background: #fff; } /* Header */ header { background: linear-gradient(135deg, #ffd4e5 0%, #d4e5ff 50%, #fffacd 100%); padding: 1rem 0; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 15px rgba(0,0,0,0.1); } .header-content { max-width: 1400px; margin: 0 auto; padding: 0 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; } .logo-text { font-size: 1.8rem; color: #8b7fb8; font-weight: bold; text-shadow: 2px 2px 4px rgba(0,0,0,0.1); letter-spacing: 2px; } nav a { color: #666; text-decoration: none; margin: 0 1rem; font-size: 1rem; transition: color 0.3s; font-weight: 500; } nav a:hover { color: #ff69b4; } /* Hero con Logo */ .hero { background: linear-gradient(135deg, #ffd4e5 0%, #d4e5ff 50%, #fffacd 100%); padding: 4rem 2rem; text-align: center; } .logo-container { max-width: 400px; margin: 0 auto 2rem; animation: fadeInScale 1s; } .logo-container img { width: 100%; height: auto; filter: drop-shadow(0 10px 30px rgba(139, 127, 184, 0.3)); } .hero h1 { font-size: 3rem; color: #8b7fb8; margin-bottom: 1rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.1); } .hero p { font-size: 1.3rem; color: #666; margin-bottom: 2rem; } .cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; } .cta-button { display: inline-block; background: linear-gradient(135deg, #ff69b4, #8b7fb8); color: white; padding: 1rem 2.5rem; text-decoration: none; border-radius: 50px; font-size: 1.1rem; transition: transform 0.3s, box-shadow 0.3s; box-shadow: 0 4px 15px rgba(139, 127, 184, 0.4); } .cta-button:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(139, 127, 184, 0.6); } .cta-whatsapp { background: linear-gradient(135deg, #25D366, #128C7E); } /* Galería de Productos Reales */ .gallery { padding: 5rem 2rem; background: #f9f9f9; } .section-title { text-align: center; font-size: 3rem; color: #8b7fb8; margin-bottom: 1rem; } .section-subtitle { text-align: center; font-size: 1.2rem; color: #666; margin-bottom: 3rem; } .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; max-width: 1400px; margin: 0 auto; } .gallery-item { position: relative; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.15); transition: transform 0.3s; height: 400px; background: white; } .gallery-item:hover { transform: translateY(-10px); box-shadow: 0 15px 40px rgba(139, 127, 184, 0.3); } .gallery-item img { width: 100%; height: 100%; object-fit: cover; } .gallery-overlay { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(139, 127, 184, 0.95), transparent); padding: 2rem; color: white; } .gallery-overlay h3 { font-size: 1.8rem; margin-bottom: 0.5rem; } /* Menú con Precios */ .menu { padding: 5rem 2rem; background: white; } .menu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; max-width: 1200px; margin: 3rem auto; } .menu-card { background: linear-gradient(135deg, #fff5f7 0%, #f0e5ff 100%); border-radius: 20px; padding: 2rem; box-shadow: 0 8px 25px rgba(0,0,0,0.1); transition: transform 0.3s; border: 3px solid transparent; } .menu-card:hover { transform: translateY(-10px); border-color: #ff69b4; } .menu-icon { font-size: 3.5rem; margin-bottom: 1rem; text-align: center; } .menu-card h3 { color: #8b7fb8; font-size: 1.8rem; margin-bottom: 1rem; text-align: center; } .menu-card p { color: #666; margin-bottom: 1.5rem; text-align: center; font-size: 1rem; } .price-tag { background: linear-gradient(135deg, #ff69b4, #8b7fb8); color: white; padding: 1rem; border-radius: 15px; text-align: center; font-size: 1.5rem; font-weight: bold; box-shadow: 0 4px 15px rgba(255, 105, 180, 0.3); } /* Info Importante */ .info-banner { background: linear-gradient(135deg, #fffacd 0%, #ffd4e5 100%); padding: 2rem; text-align: center; margin: 3rem auto; max-width: 800px; border-radius: 20px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); } .info-banner h3 { color: #8b7fb8; font-size: 1.8rem; margin-bottom: 1rem; } .info-banner p { color: #666; font-size: 1.2rem; margin: 0.5rem 0; } .info-banner strong { color: #ff69b4; } /* Contacto */ .contact { padding: 5rem 2rem; background: linear-gradient(135deg, #d4e5ff 0%, #ffd4e5 100%); text-align: center; } .contact-card { max-width: 600px; margin: 2rem auto; background: white; padding: 3rem; border-radius: 25px; box-shadow: 0 15px 40px rgba(0,0,0,0.15); } .contact-icon { font-size: 4rem; margin-bottom: 1rem; } .phone-number { font-size: 2.5rem; color: #25D366; font-weight: bold; margin: 1rem 0; } .whatsapp-btn { display: inline-block; background: linear-gradient(135deg, #25D366, #128C7E); color: white; padding: 1.2rem 3rem; text-decoration: none; border-radius: 50px; font-size: 1.3rem; font-weight: bold; margin-top: 1rem; transition: transform 0.3s, box-shadow 0.3s; box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4); } .whatsapp-btn:hover { transform: translateY(-5px); box-shadow: 0 8px 30px rgba(37, 211, 102, 0.6); } .payment-notice { margin-top: 2rem; padding: 1rem; background: #fff3cd; border-radius: 15px; border: 2px solid #ffc107; } .payment-notice p { color: #856404; font-size: 1.2rem; font-weight: bold; } /* Footer */ footer { background: linear-gradient(135deg, #8b7fb8 0%, #ff69b4 100%); color: white; text-align: center; padding: 3rem 2rem; } footer p { margin: 0.5rem 0; font-size: 1.1rem; } @keyframes fadeInScale { from { opacity: 0; transform: scale(0.8); } to { opacity: 1; transform: scale(1); } } /* Responsive */ @media (max-width: 768px) { .hero h1 { font-size: 2rem; } .section-title { font-size: 2rem; } .header-content { flex-direction: column; gap: 1rem; } nav { display: flex; flex-wrap: wrap; justify-content: center; } .logo-container { max-width: 250px; } .phone-number { font-size: 1.8rem; } } </style> </head> <body> <header> <div class="header-content"> <div class="logo-text">✨ DULCE IMPERIO ✨</div> <nav> <a href="#inicio">Inicio</a> <a href="#galeria">Galería</a> <a href="#menu">Menú</a> <a href="#contacto">Contacto</a> </nav> </div> </header> <section id="inicio" class="hero"> <div class="logo-container"> <img src="https://i.ibb.co/XXX/dulce-imperio-logo.png" alt="Dulce Imperio Logo" onerror="this.style.display='none'"> </div> <h1>Repostería Artesanal de Calidad</h1> <p>Endulza tus momentos especiales con nuestras deliciosas creaciones</p> <div class="cta-buttons"> <a href="#menu" class="cta-button">Ver Menú y Precios</a> <a href="https://wa.me/51658907" class="cta-button cta-whatsapp" target="_blank">Pedir por WhatsApp</a> </div> </section> <section id="galeria" class="gallery"> <h2 class="section-title">Nuestras Creaciones</h2> <p class="section-subtitle">Productos 100% artesanales hechos con amor</p> <div class="gallery-grid"> <div class="gallery-item"> <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 600'%3E%3Crect fill='%23f0e5ff' width='800' height='600'/%3E%3Ctext x='50%25' y='50%25' font-size='24' text-anchor='middle' fill='%238b7fb8'%3ECupcakes Artesanales%3C/text%3E%3C/svg%3E" alt="Cupcakes variados"> <div class="gallery-overlay"> <h3>🧁 Cupcakes</h3> <p>Desde $60 sin merengue - $70 con merengue</p> </div> </div> <div class="gallery-item"> <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 600'%3E%3Crect fill='%23fff5f7' width='800' height='600'/%3E%3Ctext x='50%25' y='50%25' font-size='24' text-anchor='middle' fill='%23ff69b4'%3ECake Tres Leches%3C/text%3E%3C/svg%3E" alt="Cake tres leches"> <div class="gallery-overlay"> <h3>🎂 Cakes Especiales</h3> <p>Desde $1,000 hasta $5,000</p> </div> </div> <div class="gallery-item"> <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 600'%3E%3Crect fill='%23fffacd' width='800' height='600'/%3E%3Ctext x='50%25' y='50%25' font-size='24' text-anchor='middle' fill='%238b7fb8'%3ECake Decorado%3C/text%3E%3C/svg%3E" alt="Cake decorado"> <div class="gallery-overlay"> <h3>✨ Cakes Decorados</h3> <p>Diseños personalizados</p> </div> </div> <div class="gallery-item"> <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 600'%3E%3Crect fill='%23ffd4e5' width='800' height='600'/%3E%3Ctext x='50%25' y='50%25' font-size='24' text-anchor='middle' fill='%238b7fb8'%3EPanetelas%3C/text%3E%3C/svg%3E" alt="Panetelas"> <div class="gallery-overlay"> <h3>🍰 Panetelas</h3> <p>$80 cada una</p> </div> </div> <div class="gallery-item"> <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 600'%3E%3Crect fill='%23d4e5ff' width='800' height='600'/%3E%3Ctext x='50%25' y='50%25' font-size='24' text-anchor='middle' fill='%238b7fb8'%3ECake 15 A%C3%B1os%3C/text%3E%3C/svg%3E" alt="Cake cumpleaños"> <div class="gallery-overlay"> <h3>🎉 Cakes de Celebración</h3> <p>Para eventos especiales</p> </div> </div> <div class="gallery-item"> <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 600'%3E%3Crect fill='%23f0e5ff' width='800' height='600'/%3E%3Ctext x='50%25' y='50%25' font-size='24' text-anchor='middle' fill='%23ff69b4'%3ECakes Premium%3C/text%3E%3C/svg%3E" alt="Cakes premium"> <div class="gallery-overlay"> <h3>👑 Cakes Premium</h3> <p>Romeo y Julieta - Huevo Real</p> </div> </div> </div> </section> <section id="menu" class="menu"> <h2 class="section-title">Menú y Precios</h2> <p class="section-subtitle">Todos nuestros productos son artesanales</p> <div class="menu-grid"> <div class="menu-card"> <div class="menu-icon">🎂</div> <h3>Cakes de Todo Tipo</h3> <p>Personaliza tu cake con el sabor y diseño que prefieras. Perfecto para cumpleaños, aniversarios y celebraciones.</p> <div class="price-tag">Desde $1,000 hasta $5,000 💸</div> </div> <div class="menu-card"> <div class="menu-icon">🍰</div> <h3>Cakes de Huevo Real</h3> <p>Exquisito cake tradicional con el auténtico sabor del huevo real. Una delicia clásica que no puede faltar.</p> <div class="price-tag">$9,000 🍰</div> </div> <div class="menu-card"> <div class="menu-icon">❤️</div> <h3>Cakes Romeo y Julieta</h3> <p>La combinación perfecta de guayaba y queso. Un sabor único que enamora. Ideal para eventos especiales.</p> <div class="price-tag">$9,000 ✨</div> </div> <div class="menu-card"> <div class="menu-icon">🧁</div> <h3>Ponquesitos (Cupcakes)</h3> <p>Esponjosos y deliciosos cupcakes en variedad de sabores. Con o sin merengue según tu preferencia.</p> <div class="price-tag"> Sin merengue: $60<br> Con merengue: $70 💕 </div> </div> <div class="menu-card"> <div class="menu-icon">🎀</div> <h3>Brazos Gitanos</h3> <p>Suaves y enrollados con delicioso relleno. Una opción perfecta para meriendas y reuniones familiares.</p> <div class="price-tag">$700 💕</div> </div> <div class="menu-card"> <div class="menu-icon">🍮</div> <h3>Panetelas y Baychoc</h3> <p>Tradicionales y caseras, con ese sabor que te recuerda a casa. Perfectas para compartir en familia.</p> <div class="price-tag">$80 cada una</div> </div> </div> <div class="info-banner"> <h3>🍬 Dulces por Encargo</h3> <p>¿Tienes algo especial en mente? <strong>¡También hacemos dulces por encargo!</strong></p> <p>Contáctanos y cuéntanos tu idea. Haremos realidad tus sueños más dulces.</p> </div> </section> <section id="contacto" class="contact"> <h2 class="section-title">Haz tu Pedido</h2> <p class="section-subtitle">Estamos listos para endulzar tu día</p> <div class="contact-card"> <div class="contact-icon">📱</div> <h3>Contáctanos por WhatsApp</h3> <div class="phone-number">51658907</div> <a href="https://wa.me/51658907?text=Hola!%20Me%20gustaría%20hacer%20un%20pedido%20de%20Dulce%20Imperio" class="whatsapp-btn" target="_blank"> 💬 Chatear en WhatsApp </a> <div class="payment-notice"> <p>💵 No se acepta transferencia</p> </div> </div> </section> <footer> <p>&copy; 2026 Dulce Imperio - Repostería Artesanal</p> <p>Hecho con amor 💕</p> <p>Endulzando vidas, un postre a la vez ✨</p> </footer> </body> </html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dulce Imperio - Dulces y Helados</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: white;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Fondo animado con dulces */
+        .splash-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .splash {
+            position: absolute;
+            opacity: 0.7;
+            animation: fall linear infinite;
+            font-size: 2rem;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(100vh) rotate(360deg);
+            }
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #ff6b9d 0%, #c06bff 25%, #6bb6ff 50%, #ffd93d 75%, #ff6b9d 100%);
+            padding: 1rem 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo-text {
+            color: white;
+            font-size: 1.8rem;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.3s;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+
+        .nav-links a:hover {
+            transform: scale(1.1);
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, rgba(255,107,157,0.1) 0%, rgba(192,107,255,0.1) 50%, rgba(107,182,255,0.1) 100%);
+        }
+
+        .logo-profile {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            margin: 0 auto 2rem;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            animation: pulse 2s infinite;
+            overflow: hidden;
+            border: 5px solid transparent;
+            background-image: linear-gradient(white, white), linear-gradient(135deg, #ff6b9d, #c06bff, #6bb6ff, #ffd93d);
+            background-origin: border-box;
+            background-clip: padding-box, border-box;
+        }
+
+        .logo-profile img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            background: linear-gradient(135deg, #ff6b9d, #c06bff, #6bb6ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            color: #555;
+            margin-bottom: 2rem;
+        }
+
+        /* Botones de contacto */
+        .contact-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .btn-whatsapp {
+            background: #25D366;
+            color: white;
+        }
+
+        .btn-whatsapp:hover {
+            background: #1ea952;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(37,211,102,0.4);
+        }
+
+        .btn-facebook {
+            background: #1877f2;
+            color: white;
+        }
+
+        .btn-facebook:hover {
+            background: #145dbf;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(24,119,242,0.4);
+        }
+
+        /* Productos */
+        .productos {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+
+        .productos h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            background: linear-gradient(135deg, #ff6b9d, #c06bff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .productos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .producto-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            border: 3px solid transparent;
+            background-clip: padding-box;
+            position: relative;
+        }
+
+        .producto-card::before {
+            content: '';
+            position: absolute;
+            top: -3px;
+            left: -3px;
+            right: -3px;
+            bottom: -3px;
+            background: linear-gradient(135deg, #ff6b9d, #c06bff, #6bb6ff, #ffd93d);
+            border-radius: 20px;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .producto-card:hover::before {
+            opacity: 1;
+        }
+
+        .producto-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .producto-icon {
+            font-size: 4rem;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .producto-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 15px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .producto-card h3 {
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .producto-card p {
+            font-size: 1.1rem;
+            color: #666;
+            text-align: center;
+            line-height: 1.6;
+        }
+
+        .precio {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #ff6b9d;
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        /* Info Section */
+        .info-section {
+            background: linear-gradient(135deg, rgba(255,107,157,0.1) 0%, rgba(192,107,255,0.1) 100%);
+            padding: 4rem 2rem;
+            margin-top: 4rem;
+        }
+
+        .info-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .info-content h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            background: linear-gradient(135deg, #ff6b9d, #c06bff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .info-box {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .info-box h3 {
+            color: #ff6b9d;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .info-box p {
+            color: #555;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, #ff6b9d 0%, #c06bff 50%, #6bb6ff 100%);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                gap: 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .logo-profile {
+                width: 150px;
+                height: 150px;
+                font-size: 3rem;
+            }
+
+            .contact-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Fondo animado con salpicaduras -->
+    <div class="splash-container" id="splashContainer"></div>
+
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo-text">🍰 DULCE IMPERIO</div>
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#productos">Productos</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="logo-profile">
+            <img src="https://scontent-atl3-1.xx.fbcdn.net/v/t39.30808-6/611773644_122103881811194705_1245516021939643334_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=lnXLGr6P_JQQ7kNvwE8vJ4i&_nc_oc=Adl81oRV2NxDRgmEdYyED9OT4DrpMuRX5bBS1IhxkHyNrNhrRMoXTjF-cI-oLQcN6u4&_nc_zt=23&_nc_ht=scontent-atl3-1.xx&_nc_gid=LaGF5Bm-xMxQJCYdqtfZoA&oh=00_Afoh6XEoO2RnhSFVJWEhRR8_K9I55z49yvVceiyMDCxtvQ&oe=69636EE5" alt="Dulce Imperio Logo">
+        </div>
+        <h1>DULCE IMPERIO</h1>
+        <p>Dulces de todo tipo y helados deliciosos</p>
+        
+        <div class="contact-buttons">
+            <a href="https://wa.me/5351658907" class="btn btn-whatsapp" target="_blank">
+                📱 WhatsApp: +53 51658907
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=61585841175965" class="btn btn-facebook" target="_blank">
+                👥 Síguenos en Facebook
+            </a>
+        </div>
+    </section>
+
+    <!-- Productos -->
+    <section class="productos" id="productos">
+        <h2>Nuestros Productos</h2>
+        <div class="productos-grid">
+            
+            <div class="producto-card">
+                <img src="https://scontent-dfw5-2.xx.fbcdn.net/v/t39.30808-6/612943638_122103882213194705_4732470075391892221_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=833d8c&_nc_ohc=kbRCj3w9tBAQ7kNvwHHPKAK&_nc_oc=AdnWlQwVG6f35Pb8wKy2R0QeYWJjv4-Xi0GHzgiMG8DQOsCRyhPJgI64Zw4qjRRYo1I&_nc_zt=23&_nc_ht=scontent-dfw5-2.xx&_nc_gid=SlZmbC4lieXRnfd3wE9DLQ&oh=00_AfrtMeQSmsx5HREhpvL72l3u3ioRQ3rkw39TsXDpIapgMQ&oe=696321BA" alt="Cakes" class="producto-img">
+                <h3>Cakes de todo tipo 🎂</h3>
+                <p>Deliciosos cakes personalizados para toda ocasión</p>
+                <div class="precio">$1,000 - $5,000 🤑💸</div>
+            </div>
+
+            <div class="producto-card">
+                <img src="https://scontent-dfw5-2.xx.fbcdn.net/v/t39.30808-6/612110925_122103872421194705_3719858869159038609_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=833d8c&_nc_ohc=Nr3tUziH7BgQ7kNvwH-sR_T&_nc_oc=AdlDCUfkVd5d6mEDwko5TeU-Yeh4Vs7PbUHVgm3vHcQCLsW4GGiF9jcstniubO6Mkos&_nc_zt=23&_nc_ht=scontent-dfw5-2.xx&_nc_gid=ZWnkDe__N-yjUr6rnMyBCw&oh=00_AfroRrVL5oX-pwPcRTBoQf0UvwZcxTZmc5u4SyUjPDVEjA&oe=696334EB" alt="Brazos Gitanos" class="producto-img">
+                <h3>Brazos Gitanos 🌯</h3>
+                <p>Suaves y deliciosos brazos gitanos 💕</p>
+                <div class="precio">$700</div>
+            </div>
+
+            <div class="producto-card">
+                <img src="https://scontent-dfw5-2.xx.fbcdn.net/v/t39.30808-6/611788170_122103873741194705_6128057791581178062_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=833d8c&_nc_ohc=yXpJGS4_jgUQ7kNvwE07Eri&_nc_oc=AdmImkCzuysqmH0q2m2qVXiAzAevzlWjVsEw_CCkYJGftaW0JVTrR3eGvEPMKNT9rKc&_nc_zt=23&_nc_ht=scontent-dfw5-2.xx&_nc_gid=H2-jr-v1pT0EufagdJbTdg&oh=00_Afqv2eciLk0jptHoTVZJh2288Fa8mE7wu0x9YGS22Lw0BQ&oe=696338E0" alt="Rollitos" class="producto-img">
+                <h3>Rollitos 🍥</h3>
+                <p>Rollitos irresistibles 🌟</p>
+                <div class="precio">$60</div>
+            </div>
+
+            <div class="producto-card">
+                <img src="https://scontent-dfw6-1.xx.fbcdn.net/v/t39.30808-6/611589189_122103874923194705_3144769319903234629_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=833d8c&_nc_ohc=RRxQPWm-yHwQ7kNvwEHj1CM&_nc_oc=AdnZiZ5BS5_OLG2sN1K1wmEvSwVIaZyBkY6bWJJ9B6OHg02U0LWHSmoa0-fRRu0q8L8&_nc_zt=23&_nc_ht=scontent-dfw6-1.xx&_nc_gid=8RP1EOQgk6KTms5xLc2mbA&oh=00_AfoC02OUAjsTkkiOuPP8rga7KOfANtNqLYoJPP8X9ml1nQ&oe=6963198D" alt="Ponquesitos" class="producto-img">
+                <h3>Ponquesitos 🧁</h3>
+                <p>Sin merengue: $60<br>Con merengue: $70</p>
+                <div class="precio">$60 - $70</div>
+            </div>
+
+            <div class="producto-card">
+                <img src="https://scontent-dfw5-3.xx.fbcdn.net/v/t39.30808-6/611303118_122103877095194705_3261989272098049524_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=833d8c&_nc_ohc=0tGMM_4wQr4Q7kNvwG23pPW&_nc_oc=AdnTPmZ7GkUVqKO-YAaO2Mqw_O5LWyKbP_g7rr_rqzOYAy2keDfZ4QjhiwDmojDlYhw&_nc_zt=23&_nc_ht=scontent-dfw5-3.xx&_nc_gid=Tc-Gbr6S5dY4UtCqORJwcA&oh=00_Afql2VT2NYgWJVpxL85JKPx_vGEy4Srzp2KK4x2CPqQbRg&oe=6963329C" alt="Panetelas y Baychoc" class="producto-img">
+                <h3>Panetelas y Baychoc 🍰</h3>
+                <p>Panetelas y baychoc frescos</p>
+                <div class="precio">$80 c/u</div>
+            </div>
+
+            <div class="producto-card">
+                <img src="https://scontent-dfw5-1.xx.fbcdn.net/v/t39.30808-6/610964570_122103882183194705_8345733388160820209_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=833d8c&_nc_ohc=s5HApp2Jug4Q7kNvwGwA3hY&_nc_oc=AdkYeaa-1G6udh6NSr21EMeoh6ZmKS4dQTGV0WtY_kADZbzjwKt4zJHx1shUoWlMP3s&_nc_zt=23&_nc_ht=scontent-dfw5-1.xx&_nc_gid=Yp2PJttx9cc59rCSBBde1A&oh=00_AfrMXXkGCTC2rdWGejl5MU-hmduXIUmNRZjNJUXDbtoG_Q&oe=69631E50" alt="Cakes de Huevo Real" class="producto-img">
+                <h3>Cakes de Huevo Real 🍰</h3>
+                <p>Exquisitos cakes de huevo real 💸</p>
+                <div class="precio">$9,000</div>
+            </div>
+
+            <div class="producto-card">
+                <img src="https://scontent-dfw5-1.xx.fbcdn.net/v/t39.30808-6/609067324_122103885207194705_1866171884942284365_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=833d8c&_nc_ohc=dNf9Z9XKf4cQ7kNvwE9CxX9&_nc_oc=Adkr8RpoVrD__ojyI7Vuu5k4OK_a0NwoIl_qR2i3hUN5VuWxHEs0zE2DX9UAFc7ADSI&_nc_zt=23&_nc_ht=scontent-dfw5-1.xx&_nc_gid=BZxy-pP3oSchyMk5CYJycA&oh=00_Afr8s6WDrs3cNN1nZ74Mfhc1XqVuQ2OdTvr1PiS8EdmPCA&oe=6963236C" alt="Cakes Romeo y Julieta" class="producto-img">
+                <h3>Cakes Romeo y Julieta 🎂</h3>
+                <p>Clásicos cakes de romeo y julieta ✨</p>
+                <div class="precio">$9,000</div>
+            </div>
+
+            <div class="producto-card">
+                <img src="https://scontent-dfw5-1.xx.fbcdn.net/v/t39.30808-6/610919498_122103881205194705_248598777817226143_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=833d8c&_nc_ohc=25O49qyyeY8Q7kNvwFLWZZc&_nc_oc=Adnx7VEQEjZ9fap399QffFhz_VLG8Fxv6Rt_DO-StOtZxcFqt0B0-vSo70GWO_7NruM&_nc_zt=23&_nc_ht=scontent-dfw5-1.xx&_nc_gid=CYoSJnagJrLEZmQxdjY_IQ&oh=00_AfoMDF3-wRKTfcfjqSPYJnhUeH7KGZUuvPFk-lPJfGkWdg&oe=69631D71" alt="Helados" class="producto-img">
+                <h3>Helados 🍨</h3>
+                <p>Helados cremosos y refrescantes</p>
+                <div class="precio">$350 el pote</div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Información -->
+    <section class="info-section" id="contacto">
+        <div class="info-content">
+            <h2>Información Importante</h2>
+            
+            <div class="info-box">
+                <h3>⏰ Horario de Atención</h3>
+                <p>Lunes a Sábado<br>8:00 AM - 5:00 PM</p>
+            </div>
+
+            <div class="info-box">
+                <h3>📋 Pedidos por Encargo</h3>
+                <p>La mayor parte de nuestros dulces son por encargo.<br>
+                <strong>Importante:</strong> Debe avisar con 3 días de antelación.</p>
+            </div>
+
+            <div class="info-box">
+                <h3>💵 Forma de Pago</h3>
+                <p><strong>No se acepta transferencia</strong><br>Solo efectivo</p>
+            </div>
+
+            <div class="contact-buttons">
+                <a href="https://wa.me/5351658907" class="btn btn-whatsapp" target="_blank">
+                    📱 Hacer Pedido por WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Dulce Imperio. Todos los derechos reservados.</p>
+        <p>🍰 Endulzando tu vida 🍰</p>
+    </footer>
+
+    <script>
+        // Crear dulces animados cayendo
+        const splashContainer = document.getElementById('splashContainer');
+        const dulces = ['🍰', '🎂', '🧁', '🍭', '🍬', '🍫', '🍩', '🍪', '🍮', '🍨', '🍦', '🧊', '⭐', '✨', '💫', '🌟', '🔴', '🟠', '🟡', '🟢', '🔵', '🟣', '🟤', '⚪'];
+        
+        function createSplash() {
+            const splash = document.createElement('div');
+            splash.className = 'splash';
+            
+            // Seleccionar un dulce o chispa aleatoria
+            splash.textContent = dulces[Math.floor(Math.random() * dulces.length)];
+            
+            const size = Math.random() * 1.5 + 1;
+            splash.style.fontSize = size + 'rem';
+            splash.style.left = Math.random() * 100 + '%';
+            splash.style.top = '-50px';
+            splash.style.animationDuration = (Math.random() * 10 + 15) + 's';
+            splash.style.animationDelay = Math.random() * 5 + 's';
+            
+            splashContainer.appendChild(splash);
+            
+            setTimeout(() => {
+                splash.remove();
+            }, 25000);
+        }
+        
+        // Crear dulces iniciales
+        for (let i = 0; i < 30; i++) {
+            setTimeout(createSplash, i * 200);
+        }
+        
+        // Crear nuevos dulces al hacer scroll
+        let lastScroll = 0;
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            if (Math.abs(currentScroll - lastScroll) > 100) {
+                createSplash();
+                createSplash();
+                lastScroll = currentScroll;
+            }
+        });
+        
+        // Crear dulces periódicamente
+        setInterval(createSplash, 1500);
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
